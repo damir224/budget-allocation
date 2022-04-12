@@ -1,0 +1,40 @@
+.name {
+  font-size: 14px;
+  line-height: 21px;
+  color: #2F3B66;
+  margin-bottom: 8px;
+}
+
+.iconInput {
+  position: relative;
+}
+
+.icon {
+  position: absolute;
+  z-index: 1;
+  left: 16px;
+  top: 11px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  color: #2A3558;
+}
+
+.input {
+  padding: 10px 16px 10px 33px;
+  background: linear-gradient(360deg, #FAFAFC 0%, #FFFFFF 100%);
+  border: 1px solid rgba(178, 187, 213, 0.5);
+  box-sizing: border-box;
+  box-shadow: 0px 1px 2px #E6E8F0;
+  border-radius: 3px;
+  width: 160px;
+  position: relative;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  color: #2A3558;
+
+  &:disabled {
+    color: #99A4C2;
+  }
+}

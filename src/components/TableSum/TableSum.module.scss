@@ -1,0 +1,35 @@
+.input {
+  background: #FFFFFF;
+  border: 1px solid rgba(178, 187, 213, 0.5);
+  box-sizing: border-box;
+  border-radius: 4px;
+  width: 80px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #B2BBD5;
+}
+
+.edit {
+  cursor: pointer;
+  width: 70px;
+
+  & > .invisiblePen {
+    visibility:hidden;
+  }
+
+  &:hover > .invisiblePen {
+    visibility:visible;
+  }
+}
+
+.img {
+  vertical-align: middle;
+}
+
+.sum{
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #222A41;
+}

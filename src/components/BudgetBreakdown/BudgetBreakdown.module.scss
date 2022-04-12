@@ -1,0 +1,28 @@
+.container {
+  background: #F5F6FA;
+  border: 1px solid rgba(178, 187, 213, 0.5);
+  border-radius: 4px;
+  padding: 24px;
+  max-width: 1128px;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  color: #182033;
+  margin-bottom: 8px;
+}
+
+.subTitle {
+  font-size: 14px;
+  line-height: 21px;
+  color: #99A4C2;
+  margin-bottom: 24px;
+}
+
+.months {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}

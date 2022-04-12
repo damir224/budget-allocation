@@ -1,0 +1,67 @@
+.panel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 52px;
+  background: #F6F7FB;
+  border: 1px solid rgba(178, 187, 213, 0.5);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.panelOpen {
+  border-radius: 4px 4px 0px 0px;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+}
+
+.arrow {
+  margin: 0 30px 0 15px;
+}
+
+.dots {
+  position: relative;
+  z-index: 10000;
+
+  &Img{
+    margin-right: 16px;
+  }
+
+  &Content {
+    display: none;
+    width: 160px;
+    background: #FFFFFF;
+    border: 1px solid rgba(178, 187, 213, 0.5);
+    box-shadow: 0px 4px 16px rgba(24, 32, 51, 0.12);
+    border-radius: 4px;
+    padding: 8px 5px
+  }
+
+  &Active {
+    display: block;
+    position: absolute;
+    right: 0;
+  }
+
+  &Text {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+    color: #222A41;
+    padding: 10px 8px;
+    cursor: pointer;
+    
+    &Danger {
+      color: #EE2032;
+      background: #FDE8EA;
+      border-radius: 4px;
+    }
+  }
+}
+
+.rotate {
+  transform: rotate(180deg);
+}

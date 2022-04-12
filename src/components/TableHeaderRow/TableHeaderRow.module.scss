@@ -1,0 +1,36 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 14px 28px;
+  align-items: center;
+}
+
+.gradient {
+  width: 80px;
+  height: auto;
+  background: linear-gradient(90deg, rgba(169, 181, 210, 0.0001) 0%, rgba(112, 126, 167, 0.134454) 100%);
+  mix-blend-mode: normal;
+  opacity: 0.5;
+}
+
+.names {
+  display: flex;
+  column-gap: 16px;
+}
+
+.row1{
+  width: 150px
+}
+
+.sumTitle {
+  font-weight: 700;
+  font-size: 11px;
+  line-height: 16px;
+  text-transform: uppercase;
+  color: #97A4C8;
+  text-align: start;
+}
+
+.name {
+  width: 70px;
+}
