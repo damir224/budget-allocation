@@ -22,6 +22,5 @@ export default React.memo(
     prev.id === next.id &&
     prev.img === next.img &&
     prev.name === next.name &&
-    prev.key === next.key &&
     prev.isOpen === next.isOpen,
 )
