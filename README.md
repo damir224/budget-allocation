@@ -1,12 +1,16 @@
 # Budget Allocation
 
-## Описание
+## Link
 
-This is SPA application on react and state management library - recoil
+Link to deployd version - https://budget-allocation.vercel.app/
 
-## Запуск
+## Description
+
+This is SPA application on <b>react</b> and state management library is <b>recoil</b>
+
+## Start
 
 Для запуска проекта:
 
-1. Install the project. `npm install`
-2. Запустите нужный проект в dev-режиме. `npm run start` - it will up local server on port 3000. `localhost:3000`
+1. Install the project `npm install`
+2. Start in development `npm run start` - it will up local server on port 3000. `localhost:3000`
