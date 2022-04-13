@@ -1,6 +1,6 @@
-import React from 'react';
-import styles from './BudgetBreakdown.module.scss';
-import OneMonthBudget from '../OneMonthBudget';
+import React from 'react'
+import styles from './BudgetBreakdown.module.scss'
+import OneMonthBudget from '../OneMonthBudget'
 export default function BudgetBreakdown({ months, budgetAllocation, id }) {
   return (
     <div className={styles.container}>
@@ -11,9 +11,15 @@ export default function BudgetBreakdown({ months, budgetAllocation, id }) {
       </p>
       <div className={styles.months}>
         {months.map(({ name, sum }) => (
-          <OneMonthBudget key={name} name={name} sum={sum} budgetAllocation={budgetAllocation} id={id} />
+          <OneMonthBudget
+            key={name}
+            name={name}
+            sum={sum}
+            budgetAllocation={budgetAllocation}
+            id={id}
+          />
         ))}
       </div>
     </div>
-  );
+  )
 }

@@ -1,3 +1,3 @@
-import SwitchButton from './SwitchButton';
+import SwitchButton from './SwitchButton'
 
-export default SwitchButton;
+export default SwitchButton

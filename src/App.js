@@ -1,11 +1,9 @@
-import Container from './components/Container/Container';
+import Container from './components/Container/Container'
 
 import './_globals.scss'
 
 function App() {
-  return (
-    <Container />
-  );
+  return <Container />
 }
 
-export default App;
+export default App

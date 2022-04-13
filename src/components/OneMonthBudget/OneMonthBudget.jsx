@@ -1,7 +1,7 @@
-import React from 'react';
-import { useSetRecoilState } from 'recoil';
-import updateOneMonthBudget from '../../recoil/selectors/updateOneMonthBudget';
-import styles from './OneMonthBudget.module.scss';
+import React from 'react'
+import { useSetRecoilState } from 'recoil'
+import updateOneMonthBudget from '../../recoil/selectors/updateOneMonthBudget'
+import styles from './OneMonthBudget.module.scss'
 
 export default React.memo(function OneMonthBudget({
   name,
@@ -9,7 +9,7 @@ export default React.memo(function OneMonthBudget({
   budgetAllocation,
   id,
 }) {
-  const setUpdateOneMonthBudget = useSetRecoilState(updateOneMonthBudget);
+  const setUpdateOneMonthBudget = useSetRecoilState(updateOneMonthBudget)
 
   return (
     <div className={styles.month}>
@@ -19,7 +19,7 @@ export default React.memo(function OneMonthBudget({
         <span className={styles.icon}>$</span>
         <input
           disabled={budgetAllocation}
-          type='string'
+          type="string"
           className={styles.input}
           value={sum}
           onChange={(e) =>
@@ -32,5 +32,5 @@ export default React.memo(function OneMonthBudget({
         />
       </div>
     </div>
-  );
-});
+  )
+})

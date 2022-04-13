@@ -1,22 +1,22 @@
-import React, { useState } from 'react';
-import styles from './TableSum.module.scss';
-import edit from '../../images/edit.svg';
-import accept from '../../images/accept.svg';
-import decline from '../../images/decline.svg';
-import { useSetRecoilState } from 'recoil';
-import updateOneMonthBudget from '../../recoil/selectors/updateOneMonthBudget';
+import React, { useState } from 'react'
+import styles from './TableSum.module.scss'
+import edit from '../../images/edit.svg'
+import accept from '../../images/accept.svg'
+import decline from '../../images/decline.svg'
+import { useSetRecoilState } from 'recoil'
+import updateOneMonthBudget from '../../recoil/selectors/updateOneMonthBudget'
 
 export default function TableSum({ sum, id, name }) {
-  const [isEdit, setIsEdit] = useState(false);
-  const [curSum, setCurSum] = useState(sum);
-  const setUpdateOneMonthBudget = useSetRecoilState(updateOneMonthBudget);
+  const [isEdit, setIsEdit] = useState(false)
+  const [curSum, setCurSum] = useState(sum)
+  const setUpdateOneMonthBudget = useSetRecoilState(updateOneMonthBudget)
 
   return (
     <div className={styles.edit}>
       {isEdit ? (
         <>
           <input
-            type='string'
+            type="string"
             className={styles.input}
             defaultValue={curSum}
             onChange={(e) => setCurSum(e.target.value)}
@@ -24,23 +24,23 @@ export default function TableSum({ sum, id, name }) {
           <img
             className={styles.img}
             src={accept}
-            alt='accept'
+            alt="accept"
             onClick={() => {
               setUpdateOneMonthBudget({
                 id,
                 monthName: name,
                 monthSum: curSum,
-              });
-              setIsEdit(!isEdit);
+              })
+              setIsEdit(!isEdit)
             }}
           />
           <img
             className={styles.img}
             src={decline}
-            alt='decline'
+            alt="decline"
             onClick={() => {
-              setCurSum(sum);
-              setIsEdit(!isEdit);
+              setCurSum(sum)
+              setIsEdit(!isEdit)
             }}
           />
         </>
@@ -49,12 +49,12 @@ export default function TableSum({ sum, id, name }) {
           <span className={styles.sum}>${sum}</span>
           <img
             src={edit}
-            alt='edit'
+            alt="edit"
             className={styles.invisiblePen}
             onClick={() => setIsEdit(!isEdit)}
           />
         </>
       )}
     </div>
-  );
+  )
 }

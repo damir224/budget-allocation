@@ -1,3 +1,3 @@
-import TableHeaderRow from './TableHeaderRow';
+import TableHeaderRow from './TableHeaderRow'
 
-export default TableHeaderRow;
+export default TableHeaderRow

@@ -20,5 +20,5 @@ const breakdownTemp = {
     { name: 'Nov 22', sum: '1,000' },
     { name: 'Dec 22', sum: '1,000' },
   ],
-};
-export default breakdownTemp;
+}
+export default breakdownTemp

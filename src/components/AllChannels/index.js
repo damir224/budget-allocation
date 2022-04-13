@@ -1,3 +1,3 @@
-import AllChannels from './AllChannels';
+import AllChannels from './AllChannels'
 
-export default AllChannels;
+export default AllChannels

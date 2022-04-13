@@ -1,3 +1,3 @@
-import BudgetBreakdown from './BudgetBreakdown';
+import BudgetBreakdown from './BudgetBreakdown'
 
-export default BudgetBreakdown;
+export default BudgetBreakdown

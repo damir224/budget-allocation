@@ -1,7 +1,7 @@
-import React from 'react';
-import styles from './TableRow.module.scss';
-import ChannelIconName from '../ChannelIconName';
-import TableSum from '../TableSum';
+import React from 'react'
+import styles from './TableRow.module.scss'
+import ChannelIconName from '../ChannelIconName'
+import TableSum from '../TableSum'
 
 export default function TableRow({ channel }) {
   return (
@@ -13,5 +13,5 @@ export default function TableRow({ channel }) {
         ))}
       </div>
     </div>
-  );
+  )
 }

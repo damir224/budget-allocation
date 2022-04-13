@@ -1,3 +1,3 @@
-import TableSum from './TableSum';
+import TableSum from './TableSum'
 
-export default TableSum;
+export default TableSum

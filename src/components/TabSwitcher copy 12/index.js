@@ -1,3 +1,3 @@
-import TabSwitcher from './TabSwitcher';
+import TabSwitcher from './TabSwitcher'
 
-export default TabSwitcher;
+export default TabSwitcher

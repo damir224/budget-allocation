@@ -1,7 +1,7 @@
-import React from 'react';
-import styles from './Channel.module.scss';
-import PanelTop from '../PanelTop';
-import PanelContent from '../PanelContent';
+import React from 'react'
+import styles from './Channel.module.scss'
+import PanelTop from '../PanelTop'
+import PanelContent from '../PanelContent'
 
 export default React.memo(
   function Channel({ id, name, img, setIsOpen, isOpen }) {
@@ -16,12 +16,12 @@ export default React.memo(
         />
         {isOpen && <PanelContent id={id} />}
       </div>
-    );
+    )
   },
   (prev, next) =>
     prev.id === next.id &&
     prev.img === next.img &&
     prev.name === next.name &&
     prev.key === next.key &&
-    prev.isOpen === next.isOpen
-);
+    prev.isOpen === next.isOpen,
+)

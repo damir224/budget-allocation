@@ -8,9 +8,9 @@ export default function Body() {
   const [currentTab, setCurrentTab] = useState(1)
   return (
     <div>
-      <TabSwitcher currentTab={currentTab} setCurrentTab={setCurrentTab}/>
+      <TabSwitcher currentTab={currentTab} setCurrentTab={setCurrentTab} />
       {currentTab === 1 && <AllChannels />}
-      {currentTab === 2 &&  <Table /> }
+      {currentTab === 2 && <Table />}
     </div>
   )
 }

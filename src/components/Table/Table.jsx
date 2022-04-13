@@ -1,25 +1,25 @@
-import React, { useMemo } from 'react';
-import { useRecoilValue } from 'recoil';
+import React, { useMemo } from 'react'
+import { useRecoilValue } from 'recoil'
 
-import { channelsState } from '../../recoil/atoms/channels';
-import TableHeaderRow from '../TableHeaderRow';
-import TableRow from '../TableRow/TableRow';
+import { channelsState } from '../../recoil/atoms/channels'
+import TableHeaderRow from '../TableHeaderRow'
+import TableRow from '../TableRow/TableRow'
 
 export default function Table() {
-  const channels = useRecoilValue(channelsState);
+  const channels = useRecoilValue(channelsState)
 
   const bf1 = useMemo(
     () => channels.filter((el) => el.budgetFrequency === '1'),
-    [channels]
-  );
+    [channels],
+  )
   const bf4 = useMemo(
     () => channels.filter((el) => el.budgetFrequency === '4'),
-    [channels]
-  );
+    [channels],
+  )
   const bf12 = useMemo(
     () => channels.filter((el) => el.budgetFrequency === '12'),
-    [channels]
-  );
+    [channels],
+  )
 
   return (
     <div>
@@ -48,5 +48,5 @@ export default function Table() {
         </>
       )}
     </div>
-  );
+  )
 }

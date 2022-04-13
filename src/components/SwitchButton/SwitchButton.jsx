@@ -1,15 +1,15 @@
-import React, { useState } from 'react';
-import { useSetRecoilState } from 'recoil';
+import React, { useState } from 'react'
+import { useSetRecoilState } from 'recoil'
 
-import styles from './SwitchButton.module.scss';
-import updateBudgetAllocation from '../../recoil/selectors/updateBudgetAllocation';
+import styles from './SwitchButton.module.scss'
+import updateBudgetAllocation from '../../recoil/selectors/updateBudgetAllocation'
 export default React.memo(function SwitchButton({ id, budgetAllocation }) {
-  const [bdgAlloc, setBdgAlloc] = useState(budgetAllocation);
-  const setupdateBudgetAllocation = useSetRecoilState(updateBudgetAllocation);
+  const [bdgAlloc, setBdgAlloc] = useState(budgetAllocation)
+  const setupdateBudgetAllocation = useSetRecoilState(updateBudgetAllocation)
 
   const onClickHandler = () => {
-    setupdateBudgetAllocation(id);
-  };
+    setupdateBudgetAllocation(id)
+  }
 
   return (
     <div className={styles.container}>
@@ -18,7 +18,7 @@ export default React.memo(function SwitchButton({ id, budgetAllocation }) {
           checked={!bdgAlloc}
           onChange={() => setBdgAlloc(!bdgAlloc)}
           className={styles.switchCheckbox}
-          type='checkbox'
+          type="checkbox"
         />
         <div className={styles.switchButton} />
         <div className={styles.switchLabels} onClick={onClickHandler}>
@@ -27,6 +27,5 @@ export default React.memo(function SwitchButton({ id, budgetAllocation }) {
         </div>
       </label>
     </div>
-  );
-}
-)
+  )
+})

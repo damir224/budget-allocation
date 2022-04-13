@@ -1,24 +1,24 @@
-import React, { useMemo } from 'react';
-import cn from 'classnames';
-import { useRecoilValue,useSetRecoilState } from 'recoil';
-import Popup from 'reactjs-popup';
+import React, { useMemo } from 'react'
+import cn from 'classnames'
+import { useRecoilValue, useSetRecoilState } from 'recoil'
+import Popup from 'reactjs-popup'
 import './popup.css'
-import styles from './PanelContent.module.scss';
-import tooltipInfo from '../../images/tooltipInfo.svg';
-import SwitchButton from '../SwitchButton';
-import BudgetBreakdown from '../BudgetBreakdown';
-import updateBaseLineBudget from '../../recoil/selectors/updateBaseLineBudget';
-import updateBudgetFrequency from '../../recoil/selectors/updateBudgetFrequency';
-import { channelsState } from '../../recoil/atoms/channels';
+import styles from './PanelContent.module.scss'
+import tooltipInfo from '../../images/tooltipInfo.svg'
+import SwitchButton from '../SwitchButton'
+import BudgetBreakdown from '../BudgetBreakdown'
+import updateBaseLineBudget from '../../recoil/selectors/updateBaseLineBudget'
+import updateBudgetFrequency from '../../recoil/selectors/updateBudgetFrequency'
+import { channelsState } from '../../recoil/atoms/channels'
 
 export default function PanelContent({ id }) {
-  const channels = useRecoilValue(channelsState);
+  const channels = useRecoilValue(channelsState)
   const getChannelState = useMemo(
     () => channels.find((el) => el.id === id),
-    [channels, id]
-  );
-  const setUpdateBaseLineBudget = useSetRecoilState(updateBaseLineBudget);
-  const setUpdateBudgetFrequency = useSetRecoilState(updateBudgetFrequency);
+    [channels, id],
+  )
+  const setUpdateBaseLineBudget = useSetRecoilState(updateBaseLineBudget)
+  const setUpdateBudgetFrequency = useSetRecoilState(updateBudgetFrequency)
 
   return (
     <div className={styles.panelContent}>
@@ -27,8 +27,8 @@ export default function PanelContent({ id }) {
           <div className={styles.upper}>
             <span className={styles.upperName}>Budget Frequency</span>
             <Popup
-              trigger={<img src={tooltipInfo} alt='tooltip info' />}
-              position='top center'
+              trigger={<img src={tooltipInfo} alt="tooltip info" />}
+              position="top center"
               on={['hover', 'focus']}
               arrow={'top center'}
             >
@@ -45,17 +45,17 @@ export default function PanelContent({ id }) {
               setUpdateBudgetFrequency({ newValue: e.target.value, id })
             }
           >
-            <option value='1'>Annually</option>
-            <option value='12'>Monthly</option>
-            <option value='4'>Quarterly</option>
+            <option value="1">Annually</option>
+            <option value="12">Monthly</option>
+            <option value="4">Quarterly</option>
           </select>
         </div>
         <div className={styles.base}>
           <div className={styles.upper}>
             <span className={styles.upperName}>Baseline [Annual] Budget</span>
             <Popup
-              trigger={<img src={tooltipInfo} alt='tooltip info' />}
-              position='top center'
+              trigger={<img src={tooltipInfo} alt="tooltip info" />}
+              position="top center"
               on={['hover', 'focus']}
               arrow={'top center'}
             >
@@ -67,7 +67,7 @@ export default function PanelContent({ id }) {
           </div>
           <input
             disabled={!getChannelState.budgetAllocation}
-            type='text'
+            type="text"
             className={styles.input}
             value={getChannelState.baselineBudget}
             onChange={(e) =>
@@ -79,8 +79,8 @@ export default function PanelContent({ id }) {
           <div className={styles.upper}>
             <span className={styles.upperName}>Budget Allocation</span>
             <Popup
-              trigger={<img src={tooltipInfo} alt='tooltip info' />}
-              position='top center'
+              trigger={<img src={tooltipInfo} alt="tooltip info" />}
+              position="top center"
               on={['hover', 'focus']}
               arrow={'top center'}
             >
@@ -103,6 +103,5 @@ export default function PanelContent({ id }) {
         id={id}
       />
     </div>
-  );
+  )
 }
-

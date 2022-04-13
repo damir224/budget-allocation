@@ -1,6 +1,6 @@
-import commaNumber from 'comma-number';
+import commaNumber from 'comma-number'
 
 const getMonthSum = (newValue, budgetFrequency) =>
-  commaNumber((newValue.replace(/,/g, '') / budgetFrequency).toFixed(2));
+  commaNumber((newValue.replace(/,/g, '') / budgetFrequency).toFixed(2))
 
-export default getMonthSum;
+export default getMonthSum

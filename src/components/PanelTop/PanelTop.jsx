@@ -1,17 +1,17 @@
-import React, { useState } from 'react';
-import cn from 'classnames';
+import React, { useState } from 'react'
+import cn from 'classnames'
 
-import styles from './PanelTop.module.scss';
-import arrow from '../../images/arrow.svg';
-import threeDots from '../../images/threeDots.svg';
-import ChannelIconName from '../ChannelIconName';
-import { useSetRecoilState } from 'recoil';
-import deleteChannel from '../../recoil/selectors/deleteChannel';
+import styles from './PanelTop.module.scss'
+import arrow from '../../images/arrow.svg'
+import threeDots from '../../images/threeDots.svg'
+import ChannelIconName from '../ChannelIconName'
+import { useSetRecoilState } from 'recoil'
+import deleteChannel from '../../recoil/selectors/deleteChannel'
 
 export default function PanelTop({ name, img, isOpen, setIsOpen, id }) {
-  const [openDots, setOpenDots] = useState(false);
-  const [changeName, setChangeName] = useState(false);
-  const setDeleteChannel = useSetRecoilState(deleteChannel);
+  const [openDots, setOpenDots] = useState(false)
+  const [changeName, setChangeName] = useState(false)
+  const setDeleteChannel = useSetRecoilState(deleteChannel)
 
   return (
     <div
@@ -25,7 +25,7 @@ export default function PanelTop({ name, img, isOpen, setIsOpen, id }) {
         <img
           className={cn(styles.arrow, { [styles.rotate]: !isOpen })}
           src={arrow}
-          alt='arrow'
+          alt="arrow"
         />
         <ChannelIconName
           img={img}
@@ -36,7 +36,7 @@ export default function PanelTop({ name, img, isOpen, setIsOpen, id }) {
         />
       </div>
       <div className={styles.dots} onClick={() => setOpenDots(!openDots)}>
-        <img className={styles.dotsImg} src={threeDots} alt='open options' />
+        <img className={styles.dotsImg} src={threeDots} alt="open options" />
         <div
           className={cn(styles.dotsContent, { [styles.dotsActive]: openDots })}
         >
@@ -52,5 +52,5 @@ export default function PanelTop({ name, img, isOpen, setIsOpen, id }) {
         </div>
       </div>
     </div>
-  );
+  )
 }

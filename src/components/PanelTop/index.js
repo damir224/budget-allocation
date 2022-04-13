@@ -1,3 +1,3 @@
-import PanelTop from './PanelTop';
+import PanelTop from './PanelTop'
 
-export default PanelTop;
+export default PanelTop

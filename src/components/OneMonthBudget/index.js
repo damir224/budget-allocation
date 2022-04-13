@@ -1,3 +1,3 @@
-import OneMonthBudget from './OneMonthBudget';
+import OneMonthBudget from './OneMonthBudget'
 
-export default OneMonthBudget;
+export default OneMonthBudget

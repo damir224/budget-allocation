@@ -1,6 +1,6 @@
-import { selector } from 'recoil';
-import copyObj from '../../helpers/copyObj';
-import { channelsState } from '../atoms/channels';
+import { selector } from 'recoil'
+import copyObj from '../../helpers/copyObj'
+import { channelsState } from '../atoms/channels'
 
 const updateName = selector({
   key: 'updateName',
@@ -8,15 +8,15 @@ const updateName = selector({
   set: ({ set }, { newName, id }) => {
     return set(channelsState, (prev) =>
       prev.reduce((acc, cur) => {
-        let copyCh = copyObj(cur);
+        let copyCh = copyObj(cur)
         if (cur.id === id) {
-          copyCh.name = newName;
+          copyCh.name = newName
         }
-        acc.push(copyCh);
-        return acc;
-      }, [])
-    );
+        acc.push(copyCh)
+        return acc
+      }, []),
+    )
   },
-});
+})
 
-export default updateName;
+export default updateName

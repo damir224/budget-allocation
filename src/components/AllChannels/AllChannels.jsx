@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
-import { useRecoilValue } from 'recoil';
+import React, { useState } from 'react'
+import { useRecoilValue } from 'recoil'
 
-import { channelsState } from '../../recoil/atoms/channels';
-import Channel from '../Channel';
+import { channelsState } from '../../recoil/atoms/channels'
+import Channel from '../Channel'
 
 export default function AllChannels() {
-  const channels = useRecoilValue(channelsState);
-  const [isOpen, setIsOpen] = useState({ id: null, open: false });
+  const channels = useRecoilValue(channelsState)
+  const [isOpen, setIsOpen] = useState({ id: null, open: false })
 
   return (
     <div>
@@ -21,5 +21,5 @@ export default function AllChannels() {
         />
       ))}
     </div>
-  );
+  )
 }

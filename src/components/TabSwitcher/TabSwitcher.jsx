@@ -1,7 +1,7 @@
-import React from 'react';
-import cn from 'classnames';
+import React from 'react'
+import cn from 'classnames'
 
-import styles from './TabSwitcher.module.scss';
+import styles from './TabSwitcher.module.scss'
 export default function TabSwitcher({ currentTab, setCurrentTab }) {
   return (
     <div className={styles.tabs}>
@@ -18,5 +18,5 @@ export default function TabSwitcher({ currentTab, setCurrentTab }) {
         Tab 2
       </p>
     </div>
-  );
+  )
 }

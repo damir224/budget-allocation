@@ -1,13 +1,13 @@
-import React from 'react';
-import { v4 } from 'uuid';
+import React from 'react'
+import { v4 } from 'uuid'
 
-import styles from './Headers.module.scss';
-import plus from '../../images/plus.svg';
-import { useSetRecoilState } from 'recoil';
-import { channelsState } from '../../recoil/atoms/channels';
+import styles from './Headers.module.scss'
+import plus from '../../images/plus.svg'
+import { useSetRecoilState } from 'recoil'
+import { channelsState } from '../../recoil/atoms/channels'
 
 export default function Headers() {
-  const setChannels = useSetRecoilState(channelsState);
+  const setChannels = useSetRecoilState(channelsState)
   const onClickHandler = () => {
     setChannels((oldChannels) => [
       ...oldChannels,
@@ -33,8 +33,8 @@ export default function Headers() {
           { name: 'Dec 22', sum: '1,000.00' },
         ],
       },
-    ]);
-  };
+    ])
+  }
 
   return (
     <div className={styles.header}>
@@ -46,10 +46,10 @@ export default function Headers() {
           budget. See the forecast impact with the help of tips and insights.
         </p>
         <button className={styles.button} onClick={() => onClickHandler()}>
-          <img src={plus} alt='add channel' />
+          <img src={plus} alt="add channel" />
           <span>Add Channel</span>
         </button>
       </div>
     </div>
-  );
+  )
 }

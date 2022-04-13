@@ -1,3 +1,3 @@
-import ChannelIconName from './ChannelIconName';
+import ChannelIconName from './ChannelIconName'
 
-export default ChannelIconName;
+export default ChannelIconName

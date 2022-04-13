@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import { useSetRecoilState } from 'recoil';
-import updateName from '../../recoil/selectors/updateName';
-import styles from './ChannelIconName.module.scss';
-import accept from '../../images/accept.svg';
-import decline from '../../images/decline.svg';
+import React, { useState } from 'react'
+import { useSetRecoilState } from 'recoil'
+import updateName from '../../recoil/selectors/updateName'
+import styles from './ChannelIconName.module.scss'
+import accept from '../../images/accept.svg'
+import decline from '../../images/decline.svg'
 
 export default function ChannelIconName({
   img,
@@ -12,9 +12,9 @@ export default function ChannelIconName({
   setChangeName,
   id,
 }) {
-  const setUpdateName = useSetRecoilState(updateName);
-  const [inputName, setInputName] = useState(name);
-  
+  const setUpdateName = useSetRecoilState(updateName)
+  const [inputName, setInputName] = useState(name)
+
   return (
     <div className={styles.container}>
       <img
@@ -25,7 +25,7 @@ export default function ChannelIconName({
       {changeName ? (
         <>
           <input
-            type='string'
+            type="string"
             className={styles.input}
             value={inputName}
             onChange={(e) => setInputName(e.target.value)}
@@ -33,19 +33,19 @@ export default function ChannelIconName({
           <img
             className={styles.inputImg}
             src={accept}
-            alt='accept'
+            alt="accept"
             onClick={() => {
-              setUpdateName({ newName: inputName, id });
-              setChangeName((prev) => !prev);
+              setUpdateName({ newName: inputName, id })
+              setChangeName((prev) => !prev)
             }}
           />
           <img
             className={styles.inputImg}
             src={decline}
-            alt='decline'
+            alt="decline"
             onClick={() => {
-              setInputName(name);
-              setChangeName((prev) => !prev);
+              setInputName(name)
+              setChangeName((prev) => !prev)
             }}
           />
         </>
@@ -53,5 +53,5 @@ export default function ChannelIconName({
         <p className={styles.name}>{name}</p>
       )}
     </div>
-  );
+  )
 }
