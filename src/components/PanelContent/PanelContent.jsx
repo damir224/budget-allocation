@@ -2,6 +2,7 @@ import React, { useMemo } from 'react'
 import cn from 'classnames'
 import { useRecoilValue, useSetRecoilState } from 'recoil'
 import Popup from 'reactjs-popup'
+
 import './popup.css'
 import styles from './PanelContent.module.scss'
 import tooltipInfo from '../../images/tooltipInfo.svg'
@@ -10,6 +11,7 @@ import BudgetBreakdown from '../BudgetBreakdown'
 import updateBaseLineBudget from '../../recoil/selectors/updateBaseLineBudget'
 import updateBudgetFrequency from '../../recoil/selectors/updateBudgetFrequency'
 import { channelsState } from '../../recoil/atoms/channels'
+import freqNameEnum from '../../const/freqNameEnum'
 
 export default function PanelContent({ id }) {
   const channels = useRecoilValue(channelsState)
@@ -30,8 +32,7 @@ export default function PanelContent({ id }) {
               trigger={<img src={tooltipInfo} alt="tooltip info" />}
               position="top center"
               on={['hover', 'focus']}
-              arrow={'top center'}
-            >
+              arrow={'top center'}>
               <span className={styles.tooltipContent}>
                 You can set a yearly, quarterly, or monthly budget for this
                 channel
@@ -43,8 +44,7 @@ export default function PanelContent({ id }) {
             value={getChannelState.budgetFrequency}
             onChange={(e) =>
               setUpdateBudgetFrequency({ newValue: e.target.value, id })
-            }
-          >
+            }>
             <option value="1">Annually</option>
             <option value="12">Monthly</option>
             <option value="4">Quarterly</option>
@@ -52,13 +52,14 @@ export default function PanelContent({ id }) {
         </div>
         <div className={styles.base}>
           <div className={styles.upper}>
-            <span className={styles.upperName}>Baseline [Annual] Budget</span>
+            <span className={styles.upperName}>{`Baseline ${
+              freqNameEnum[getChannelState.budgetFrequency]
+            } Budget`}</span>
             <Popup
               trigger={<img src={tooltipInfo} alt="tooltip info" />}
               position="top center"
               on={['hover', 'focus']}
-              arrow={'top center'}
-            >
+              arrow={'top center'}>
               <span className={styles.tooltipContent}>
                 Set an annual budget for this chanel - you'll be able to break
                 it down to months in the following step.
@@ -82,8 +83,7 @@ export default function PanelContent({ id }) {
               trigger={<img src={tooltipInfo} alt="tooltip info" />}
               position="top center"
               on={['hover', 'focus']}
-              arrow={'top center'}
-            >
+              arrow={'top center'}>
               <span className={styles.tooltipContent}>
                 Decide how to distribute your yearly budget across months:{' '}
                 <b>Equally</b> (equal monthly budget) or <b>Manually</b>{' '}
