@@ -1,10 +1,14 @@
 # Budget Allocation
 
-## Описание
+## Link
+
+Link to deployd version - https://budget-allocation.vercel.app/
+
+## Description
 
 This is SPA application on react and state management library - recoil
 
-## Запуск
+## Start
 
 Для запуска проекта:
 
