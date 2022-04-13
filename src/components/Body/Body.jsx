@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
+
 import AllChannels from '../AllChannels'
 import Table from '../Table'
 import TabSwitcher from '../TabSwitcher/TabSwitcher'
-import styles from './Body.module.scss'
 
 export default function Body() {
   const [currentTab, setCurrentTab] = useState(1)

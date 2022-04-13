@@ -12,7 +12,6 @@ const updateName = selector({
         if (cur.id === id) {
           copyCh.name = newName;
         }
-        console.log('newName, id', newName, id);
         acc.push(copyCh);
         return acc;
       }, [])
