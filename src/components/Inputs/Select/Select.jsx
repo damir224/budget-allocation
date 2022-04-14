@@ -17,7 +17,8 @@ const Select = ({ id, budgetFrequency, onUpdateBudgetFrequency }) => {
         value={budgetFrequency}
         onChange={(e) =>
           onUpdateBudgetFrequency({ newValue: e.target.value, id })
-        }>
+        }
+      >
         <option value="1">Annually</option>
         <option value="12">Monthly</option>
         <option value="4">Quarterly</option>

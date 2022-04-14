@@ -19,7 +19,8 @@ const PanelTop = ({ name, img, isOpen, onOpenId, id }) => {
       onClick={(e) =>
         !/(dots|input)/g.test(e.target.className) &&
         onOpenId((previousId) => (previousId === id ? 0 : id))
-      }>
+      }
+    >
       <div className={styles.left}>
         <img
           className={cn(styles.arrow, { [styles.rotate]: !isOpen })}
@@ -37,13 +38,15 @@ const PanelTop = ({ name, img, isOpen, onOpenId, id }) => {
       <div className={styles.dots} onClick={() => setOpenDots(!openDots)}>
         <img className={styles.dotsImg} src={threeDots} alt="open options" />
         <div
-          className={cn(styles.dotsContent, { [styles.dotsActive]: openDots })}>
+          className={cn(styles.dotsContent, { [styles.dotsActive]: openDots })}
+        >
           <p onClick={() => setChangeName(true)} className={styles.dotsText}>
             Edit
           </p>
           <p
             onClick={() => setDeleteChannel({ id })}
-            className={cn(styles.dotsText, styles.dotsTextDanger)}>
+            className={cn(styles.dotsText, styles.dotsTextDanger)}
+          >
             Remove
           </p>
         </div>

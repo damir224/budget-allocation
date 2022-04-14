@@ -9,12 +9,14 @@ const TabSwitcher = ({ currentTab, onCurrentTab }) => {
     <div className={styles.tabs}>
       <p
         className={cn({ [styles.active]: currentTab === 1 })}
-        onClick={() => onCurrentTab(TABS.TAB1)}>
+        onClick={() => onCurrentTab(TABS.TAB1)}
+      >
         Tab 1
       </p>
       <p
         className={cn({ [styles.active]: currentTab === 2 })}
-        onClick={() => onCurrentTab(TABS.TAB2)}>
+        onClick={() => onCurrentTab(TABS.TAB2)}
+      >
         Tab 2
       </p>
     </div>

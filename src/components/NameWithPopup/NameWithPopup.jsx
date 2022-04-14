@@ -12,7 +12,8 @@ const NameWithPopup = ({ name, tooltipContent }) => {
         trigger={<img src={tooltipInfo} alt="tooltip info" />}
         position="top center"
         on={['hover', 'focus']}
-        arrow={'top center'}>
+        arrow={'top center'}
+      >
         <span className={styles.tooltipContent}>{tooltipContent}</span>
       </Popup>
     </div>
