@@ -1,4 +1,4 @@
-const breakdownTemp = {
+const breakdownTemplate = {
   1: [{ name: '2022', sum: '1,000' }],
   4: [
     { name: 'Q1', sum: '1,000' },
@@ -21,4 +21,4 @@ const breakdownTemp = {
     { name: 'Dec 22', sum: '1,000' },
   ],
 }
-export default breakdownTemp
+export default breakdownTemplate

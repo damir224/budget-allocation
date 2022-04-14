@@ -1,52 +1,23 @@
-import React, { useMemo } from 'react'
+import React from 'react'
 import { useRecoilValue } from 'recoil'
 
 import { channelsState } from '../../recoil/atoms/channels'
-import TableHeaderRow from '../TableHeaderRow'
-import TableRow from '../TableRow/TableRow'
+import SubTable from '../SubTable/SubTable'
 
-export default function Table() {
+const Table = () => {
   const channels = useRecoilValue(channelsState)
 
-  const bf1 = useMemo(
-    () => channels.filter((el) => el.budgetFrequency === '1'),
-    [channels],
-  )
-  const bf4 = useMemo(
-    () => channels.filter((el) => el.budgetFrequency === '4'),
-    [channels],
-  )
-  const bf12 = useMemo(
-    () => channels.filter((el) => el.budgetFrequency === '12'),
-    [channels],
-  )
+  const budgetFreqTable1 = channels.filter((el) => el.budgetFrequency === '1')
+  const budgetFreqTable4 = channels.filter((el) => el.budgetFrequency === '4')
+  const budgetFreqTable12 = channels.filter((el) => el.budgetFrequency === '12')
 
   return (
     <div>
-      {bf1.length > 0 && (
-        <>
-          <TableHeaderRow tableHead={bf1[0].months} />
-          {bf1.map((el) => (
-            <TableRow key={el.id} channel={el} />
-          ))}
-        </>
-      )}
-      {bf4.length > 0 && (
-        <>
-          <TableHeaderRow tableHead={bf4[0].months} />
-          {bf4.map((el) => (
-            <TableRow key={el.id} channel={el} />
-          ))}
-        </>
-      )}
-      {bf12.length > 0 && (
-        <>
-          <TableHeaderRow tableHead={bf12[0].months} />
-          {bf12.map((el) => (
-            <TableRow key={el.id} channel={el} />
-          ))}
-        </>
-      )}
+      <SubTable budgetFreqTable={budgetFreqTable1} />
+      <SubTable budgetFreqTable={budgetFreqTable4} />
+      <SubTable budgetFreqTable={budgetFreqTable12} />
     </div>
   )
 }
+
+export default Table

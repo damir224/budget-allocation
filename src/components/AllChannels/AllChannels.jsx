@@ -4,9 +4,9 @@ import { useRecoilValue } from 'recoil'
 import { channelsState } from '../../recoil/atoms/channels'
 import Channel from '../Channel'
 
-export default function AllChannels() {
+const AllChannels = () => {
   const channels = useRecoilValue(channelsState)
-  const [isOpen, setIsOpen] = useState({ id: null, open: false })
+  const [openId, setOpenId] = useState(0)
 
   return (
     <div>
@@ -16,10 +16,12 @@ export default function AllChannels() {
           id={id}
           name={name}
           img={img}
-          setIsOpen={setIsOpen}
-          isOpen={id === isOpen.id ? isOpen.open : false}
+          onOpenId={setOpenId}
+          isOpen={id === openId}
         />
       ))}
     </div>
   )
 }
+
+export default AllChannels

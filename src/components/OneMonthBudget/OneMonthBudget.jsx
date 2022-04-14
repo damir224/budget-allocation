@@ -1,14 +1,10 @@
 import React from 'react'
 import { useSetRecoilState } from 'recoil'
+
 import updateOneMonthBudget from '../../recoil/selectors/updateOneMonthBudget'
 import styles from './OneMonthBudget.module.scss'
 
-export default React.memo(function OneMonthBudget({
-  name,
-  sum,
-  budgetAllocation,
-  id,
-}) {
+const OneMonthBudget = ({ name, sum, budgetAllocation, id }) => {
   const setUpdateOneMonthBudget = useSetRecoilState(updateOneMonthBudget)
 
   return (
@@ -22,15 +18,17 @@ export default React.memo(function OneMonthBudget({
           type="string"
           className={styles.input}
           value={sum}
-          onChange={(e) =>
+          onChange={(event) =>
             setUpdateOneMonthBudget({
               id,
               monthName: name,
-              monthSum: e.target.value,
+              monthSum: event.target.value,
             })
           }
         />
       </div>
     </div>
   )
-})
+}
+
+export default React.memo(OneMonthBudget)

@@ -3,14 +3,17 @@ import React, { useState } from 'react'
 import AllChannels from '../AllChannels'
 import Table from '../Table'
 import TabSwitcher from '../TabSwitcher/TabSwitcher'
+import TABS from '../../const/tabs'
 
-export default function Body() {
-  const [currentTab, setCurrentTab] = useState(1)
+const Body = () => {
+  const [currentTab, setCurrentTab] = useState(TABS.TAB1)
   return (
     <div>
-      <TabSwitcher currentTab={currentTab} setCurrentTab={setCurrentTab} />
-      {currentTab === 1 && <AllChannels />}
-      {currentTab === 2 && <Table />}
+      <TabSwitcher currentTab={currentTab} onCurrentTab={setCurrentTab} />
+      {currentTab === TABS.TAB1 && <AllChannels />}
+      {currentTab === TABS.TAB2 && <Table />}
     </div>
   )
 }
+
+export default Body

@@ -1,17 +1,12 @@
 import React, { useState } from 'react'
 import { useSetRecoilState } from 'recoil'
+
 import updateName from '../../recoil/selectors/updateName'
 import styles from './ChannelIconName.module.scss'
 import accept from '../../images/accept.svg'
 import decline from '../../images/decline.svg'
 
-export default function ChannelIconName({
-  img,
-  name,
-  changeName,
-  setChangeName,
-  id,
-}) {
+const ChannelIconName = ({ img, name, changeName, onChangeName, id }) => {
   const setUpdateName = useSetRecoilState(updateName)
   const [inputName, setInputName] = useState(name)
 
@@ -28,7 +23,7 @@ export default function ChannelIconName({
             type="string"
             className={styles.input}
             value={inputName}
-            onChange={(e) => setInputName(e.target.value)}
+            onChange={(event) => setInputName(event.target.value)}
           />
           <img
             className={styles.inputImg}
@@ -36,7 +31,7 @@ export default function ChannelIconName({
             alt="accept"
             onClick={() => {
               setUpdateName({ newName: inputName, id })
-              setChangeName((prev) => !prev)
+              onChangeName((previousName) => !previousName)
             }}
           />
           <img
@@ -45,7 +40,7 @@ export default function ChannelIconName({
             alt="decline"
             onClick={() => {
               setInputName(name)
-              setChangeName((prev) => !prev)
+              onChangeName((previousName) => !previousName)
             }}
           />
         </>
@@ -55,3 +50,4 @@ export default function ChannelIconName({
     </div>
   )
 }
+export default ChannelIconName

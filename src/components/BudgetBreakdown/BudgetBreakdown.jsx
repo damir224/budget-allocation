@@ -1,7 +1,9 @@
 import React from 'react'
+
 import styles from './BudgetBreakdown.module.scss'
 import OneMonthBudget from '../OneMonthBudget'
-export default function BudgetBreakdown({ months, budgetAllocation, id }) {
+
+const BudgetBreakdown = ({ months, budgetAllocation, id }) => {
   return (
     <div className={styles.container}>
       <p className={styles.title}>Budget Breakdown</p>
@@ -23,3 +25,5 @@ export default function BudgetBreakdown({ months, budgetAllocation, id }) {
     </div>
   )
 }
+
+export default BudgetBreakdown

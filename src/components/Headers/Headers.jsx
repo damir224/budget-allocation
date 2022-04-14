@@ -1,40 +1,20 @@
 import React from 'react'
+import { useSetRecoilState } from 'recoil'
+import { cloneDeep } from 'lodash'
 import { v4 } from 'uuid'
 
 import styles from './Headers.module.scss'
 import plus from '../../images/plus.svg'
-import { useSetRecoilState } from 'recoil'
 import { channelsState } from '../../recoil/atoms/channels'
+import newChannelTemplate from '../../const/newChannelTemplate'
 
-export default function Headers() {
+const Headers = () => {
   const setChannels = useSetRecoilState(channelsState)
-  const onClickHandler = () => {
+  const onClickHandler = () =>
     setChannels((oldChannels) => [
       ...oldChannels,
-      {
-        id: v4(),
-        name: 'Paid reviews',
-        img: 'affiliateProgram.svg',
-        budgetFrequency: '12',
-        baselineBudget: '12,000',
-        budgetAllocation: true,
-        months: [
-          { name: 'Jan 22', sum: '1,000.00' },
-          { name: 'Feb 22', sum: '1,000.00' },
-          { name: 'Mar 22', sum: '1,000.00' },
-          { name: 'Apr 22', sum: '1,000.00' },
-          { name: 'May 22', sum: '1,000.00' },
-          { name: 'Jun 22', sum: '1,000.00' },
-          { name: 'Jul 22', sum: '1,000.00' },
-          { name: 'Aug 22', sum: '1,000.00' },
-          { name: 'Sep 22', sum: '1,000.00' },
-          { name: 'Oct 22', sum: '1,000.00' },
-          { name: 'Nov 22', sum: '1,000.00' },
-          { name: 'Dec 22', sum: '1,000.00' },
-        ],
-      },
+      { ...cloneDeep(newChannelTemplate), id: v4() },
     ])
-  }
 
   return (
     <div className={styles.header}>
@@ -53,3 +33,4 @@ export default function Headers() {
     </div>
   )
 }
+export default Headers

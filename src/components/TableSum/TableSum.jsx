@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
+import { useSetRecoilState } from 'recoil'
+
 import styles from './TableSum.module.scss'
 import edit from '../../images/edit.svg'
 import accept from '../../images/accept.svg'
 import decline from '../../images/decline.svg'
-import { useSetRecoilState } from 'recoil'
 import updateOneMonthBudget from '../../recoil/selectors/updateOneMonthBudget'
 
-export default function TableSum({ sum, id, name }) {
+const TableSum = ({ sum, id, name }) => {
   const [isEdit, setIsEdit] = useState(false)
   const [curSum, setCurSum] = useState(sum)
   const setUpdateOneMonthBudget = useSetRecoilState(updateOneMonthBudget)
@@ -19,7 +20,7 @@ export default function TableSum({ sum, id, name }) {
             type="string"
             className={styles.input}
             defaultValue={curSum}
-            onChange={(e) => setCurSum(e.target.value)}
+            onChange={(event) => setCurSum(event.target.value)}
           />
           <img
             className={styles.img}
@@ -58,3 +59,5 @@ export default function TableSum({ sum, id, name }) {
     </div>
   )
 }
+
+export default TableSum
