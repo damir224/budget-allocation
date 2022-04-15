@@ -1,6 +1,6 @@
 import React from 'react'
-import Body from './components/Body'
-import Headers from './components/Headers'
+import Body from './components/organism/Body'
+import Headers from './components/organism/Headers'
 import styles from './App.module.scss'
 
 const App = () => (
